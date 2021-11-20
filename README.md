@@ -10,18 +10,24 @@ This is the official website of the podcast.
 ## Install
 
 ```
-TODO: Add installation instructions.
+git clone git@github.com:soulim/codeandbeyond.git
 ```
 
 ## Usage
 
 ```
-TODO: Add usage instructions.
+# Build the website
+make all
+```
+
+```
+# Start the local web-server
+make preview
 ```
 
 ## Contributing
 
-TODO: Add instructions.
+PRs accepted.
 
 ## License
 
