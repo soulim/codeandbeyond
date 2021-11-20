@@ -31,4 +31,4 @@ PRs accepted.
 
 ## License
 
-TODO: Add license.
+See [LICENSE](LICENSE).
