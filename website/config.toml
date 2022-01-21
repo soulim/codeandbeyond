@@ -1,3 +1,38 @@
 baseURL = "http://example.org/"
 languageCode = "en-US"
 title = "Code && Beyond"
+copyright = "Alexander Sulim and Pablo Vicente"
+
+[sitemap]
+priority = 0.5
+
+[privacy]
+  [privacy.twitter]
+    disable = false
+    enableDNT = true
+    simple = true
+    disableInlineCSS = true
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = true
+
+[server]
+  [[server.headers]]
+    for = "/*"
+    [server.headers.values]
+      X-Frame-Options = "DENY"
+      Content-Security-Policy = """\
+                                default-src 'none'; \
+                                base-uri 'self'; \
+                                form-action 'self'; \
+                                connect-src 'self' https://plausible.io; \
+                                font-src 'self'; \
+                                frame-src 'self' https://www.youtube-nocookie.com; \
+                                img-src 'self' data:; \
+                                manifest-src 'self'; \
+                                media-src 'self'; \
+                                object-src 'none'; \
+                                script-src 'self' https://plausible.io; \
+                                style-src 'self' 'unsafe-inline'; \
+                                frame-ancestors 'none'\
+                                """
