@@ -1,0 +1,8 @@
+body {
+  font-family: monospace;
+}
+
+.bd-dark {
+  background-color: #282c34;
+  color: #ffffff;
+}
