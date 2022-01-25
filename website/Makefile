@@ -3,7 +3,7 @@ TMP_DIR = ./tmp
 PUB_DIR = ./public
 
 # See https://github.com/gohugoio/hugo/releases
-HUGO_VERSION = 0.89.4
+HUGO_VERSION = 0.92.0
 
 OS = $(shell uname -s)
 # Hugo releases use "macOS" instead of "Darwin" as an OS name.
