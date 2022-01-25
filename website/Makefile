@@ -46,6 +46,15 @@ preview: | $(PUB_DIR) $(HUGO)
                  --templateMetrics \
                  --templateMetricsHints
 
+.PHONY: dist
+dist: all
+	zip --test \
+	    --recurse-paths \
+	    --exclude "*.DS_Store" \
+	    -9 \
+	    $(TMP_DIR)/website.zip \
+	    $(PUB_DIR)
+
 .PHONY: clean
 clean:
 	rm -rf $(BIN_DIR)
