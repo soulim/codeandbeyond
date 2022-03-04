@@ -6,6 +6,18 @@ copyright = "Alexander Sulim and Pablo Vicente"
 [sitemap]
 priority = 0.5
 
+[[menu.main]]
+identifier = "episodes"
+title = "Episodes"
+name = "Episodes"
+url = "/episodes/"
+
+[[menu.main]]
+identifier = "about"
+title = "About"
+name = "About"
+url = "/about/"
+
 [privacy]
   [privacy.twitter]
     disable = false
@@ -30,7 +42,7 @@ priority = 0.5
                                 frame-src 'self' https://www.youtube-nocookie.com; \
                                 img-src 'self' data:; \
                                 manifest-src 'self'; \
-                                media-src 'self'; \
+                                media-src 'self' https://anchor.fm https://d3ctxlq1ktw2nl.cloudfront.net; \
                                 object-src 'none'; \
                                 script-src 'self' https://plausible.io; \
                                 style-src 'self' 'unsafe-inline'; \
