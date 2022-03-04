@@ -1,0 +1,74 @@
+{{ define "header" }}
+  <div class="container py-3">
+    <div class="row">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-8">
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/episodes/">Episodes</a></li>
+          </ol>
+        </nav>
+      </div>
+  </div>
+{{ end }}
+
+{{ define "main" }}
+  <div class="container mb-5">
+    <div class="row">
+      <div class="col-md-3">
+        {{ $image := resources.Get "images/codeandbeyond@800x800.png"
+                     | resources.Fingerprint "sha512" -}}
+        <div class="card mb-5">
+          <img src="{{ $image.RelPermalink }}" class="card-img-top" alt="Code && Beyond" loading="lazy">
+          <div class="card-body">
+            <p class="card-text">
+              <audio class="d-block w-100" controls="" preload="metadata">
+                {{ range $.Params.audio }}
+                  <source src="{{ . }}" type="audio/mpeg">
+                {{ end}}
+              </audio>
+            </p>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="col-md-8 offset-md-1">
+        <article>
+          <header>
+            <h1 class="pb-2 border-bottom">{{ .Title }}</h1>
+            <p class="mb-md-5"><time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time></p>
+          </header>
+          {{ .Content }}
+        </article>
+      </div>
+    </div>
+  </div>
+
+  {{ $readNext := or .NextInSection .PrevInSection }}
+  {{ if $readNext }}
+    {{ with $readNext }}
+      <div class="border-top">
+        <div class="container">
+          <div class="row py-5">
+            <div class="col-md-4">
+              <h2 class="display-6 pb-2 pb-lg-5 mb-5">Another episode</h2>
+            </div>
+            <div class="col-md-8">
+              <article>
+                <header>
+                  <h3 class="pb-2 pb-md-3"><a href="{{ .RelPermalink }}"
+                                              title="Read '{{ .Title }}'"
+                                              rel="next">{{ .Title }}</a></h3>
+                </header>
+                {{ .Summary }}
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{ end }}
+  {{ end }}
+{{ end }}

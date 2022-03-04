@@ -58,14 +58,14 @@
     <main class="flex-shrink-0">
       {{- block "main" . -}}{{- end -}}
     </main>
-    <footer class="mt-auto">
+    <footer class="mt-auto bg-light">
       {{ block "footer" . }}
         <div class="container">
           <div class="row mt-5 py-5">
             <div class="col-md-6">
-              <span class="text-muted">&copy;&nbsp;{{ now.Format "2006"}} {{ .Site.Copyright }}</span>
+              <p class="text-muted small">&copy;&nbsp;{{ now.Format "2006"}} {{ .Site.Copyright }}</p>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 text-end">
               {{ $image := resources.Get "images/by-nc-sa.png"
                            | resources.Fingerprint "sha512" -}}
               <a href="https://creativecommons.org/licenses/by-nc/4.0/"><img src="{{ $image.RelPermalink }}" class="rounded img-fluid" width="117px" height="41px" alt="Attribution-NonCommercial 4.0 International"></a>

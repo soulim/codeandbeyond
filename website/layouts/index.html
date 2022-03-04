@@ -15,7 +15,24 @@
     </div>
   </div>
 </section>
-<!-- TODO: Add recent episodes section. -->
+<section>
+  <div class="container py-3 py-lg-5">
+    <h1 class="display-0 pb-2 border-bottom">Recent episodes</h1>
+    <div class="row py-3 py-lg-5">
+      {{ range first 2 (where site.RegularPages "Type" "in" site.Params.mainSections).ByDate.Reverse }}
+        <div class="col-md-6">
+          <article>
+            <header>
+              <h2 class="fw-bold"><a href="{{ .RelPermalink }}" title="Listen '{{ .Title }}'" rel="bookmark">{{ .Title }}</a></h2>
+              <p><time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time></p>
+            </header>
+            {{ .Summary }}
+          </article>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
 <section>
   <div class="container py-3 py-lg-5">
     <h1 class="display-0 pb-2 border-bottom">Hosts</h1>
@@ -26,7 +43,7 @@
         <img src="{{ $image.RelPermalink }}"
              class="rounded img-fluid mb-3"
              alt="Pablo Vicente">
-        <h3>Pablo Vicente</h3>
+        <h2>Pablo Vicente</h2>
         <p class="text-muted">Software Engineer</p>
         <p>An adaptable and proficient software developer, with experience in Web Development and API design. My goal is to become the best software developer I can, and to work with interesting people.</p>
         <p><a href="https://pvcarrera.github.io/">Learn more about Pablo</a></p>
@@ -37,7 +54,7 @@
         <img src="{{ $image.RelPermalink }}"
              class="rounded img-fluid mb-3"
              alt="Alexander Sulim">
-        <h3>Alexander Sulim</h3>
+        <h2>Alexander Sulim</h2>
         <p class="text-muted">Software Engineer. Maker.</p>
         <p>A software engineer building the web professionally for the last fifteen years, recently focused on backend challenges at Babbel.</p>
         <p><a href="https://sul.im/">Learn more about Alex</a></p>
@@ -49,7 +66,7 @@
   <div class="container py-3 py-lg-5">
     <div class="row py-3 py-lg-5">
       <div class="col-md-6 offset-md-3">
-        <h1 class="pb-2">Have something to say?</h1>
+        <h3 class="display-6 pb-2">Have something to say?</h3>
         <p>Simply send us an email at <a href="mailto:codeandbeyond@protonmail.com">codeandbeyond@protonmail.com</a>.</p>
       </div>
     </div>

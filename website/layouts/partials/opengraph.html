@@ -22,7 +22,9 @@
 {{ end -}}
 
 {{ with .Params.audio -}}
+  {{ range . }}
   <meta property="og:audio" content="{{ . }}" />
+  {{ end }}
 {{ end -}}
 {{ with .Params.locale -}}
   <meta property="og:locale" content="{{ . }}" />

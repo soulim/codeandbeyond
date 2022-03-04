@@ -1,0 +1,49 @@
+{{ define "header" }}
+  <div class="container py-3">
+    <div class="row">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-8">
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active">Episodes</li>
+          </ol>
+        </nav>
+      </div>
+  </div>
+{{ end }}
+
+{{ define "main" }}
+  <div class="container mb-5">
+    <div class="row">
+      <div class="col-md-3">
+        {{ $image := resources.Get "images/codeandbeyond@800x800.png"
+                     | resources.Fingerprint "sha512" -}}
+        <div class="card mb-5">
+          <img src="{{ $image.RelPermalink }}" class="card-img-top" alt="Code && Beyond" loading="lazy">
+        </div>
+
+      </div>
+      <div class="col-md-8 offset-md-1">
+        <h1 class="display-0 pb-2 mb-5 border-bottom">{{ .Type | humanize | title }}</h1>
+
+        {{ range .Pages.ByDate.Reverse }}
+          <article class="mb-5">
+            <header>
+              <h2>
+                {{ if .Truncated }}
+                  <a href="{{ .RelPermalink }}" title="Read '{{ .Title }}'" rel="bookmark">{{ .Title }}</a>
+                {{ else }}
+                  {{ .Title }}
+                {{ end }}
+              </h2>
+              <p><time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time></p>
+            </header>
+            {{ .Summary }}
+          </article>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+{{ end }}
