@@ -11,6 +11,7 @@ audio = ["https://anchor.fm/s/5cd408f8/podcast/play/57041432/https%3A%2F%2Fd3ctx
 
 Hello again! It's been a while since we released an episode. But, after a
 summer break, we are back on track with new ideas.
+<!--more-->
 
 Speaking of breaks, in this episode of Code && Beyond we talk about what we
 like to do after work to relax and recharge our batteries. What works for us
