@@ -32,5 +32,5 @@ Links:
 Have any feedback? Send us an email at
 [codeandbeyond@protonmail.com](mailto:codeandbeyond@protonmail.com).
 
-Music by [penguinmusic](https://pixabay.com/users/penguinmusic-24940186) from
-[Pixabay](https://pixabay.com/music).
+*Music by [penguinmusic](https://pixabay.com/users/penguinmusic-24940186) from
+[Pixabay](https://pixabay.com/music)*.

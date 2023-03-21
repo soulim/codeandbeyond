@@ -34,6 +34,14 @@ Notes:
 - [Semrush](https://www.semrush.com/) is a platform for SEO, content marketing,
   competitor research, PPC and social media marketing
 
+### You might also like
+
+If you are interested in the topic of product discovery, listen to the episode
+of Code && Beyound where Ana, Pablo, and Alex discuss [product discovery]({{< ref "episodes/ab8a2381-8ee0-43c2-a0f9-5d8825aecdf8-product-discovery.md" >}})
+processes and look at them from different perspective.
+
+---
+
 Have any feedback? Send us an email at
 [codeandbeyond@protonmail.com](mailto:codeandbeyond@protonmail.com) or leave a
 voice message on [Anchor](https://anchor.fm/codeandbeyond).
